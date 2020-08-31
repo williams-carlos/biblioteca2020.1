@@ -12,17 +12,17 @@ public class funcionarioDAO {
 private Connection connection;
 	
 	public funcionarioDAO() throws ClassNotFoundException {
-		this.connection = new ConnectionFactory().getConnection();
+		connection = new ConnectionFactory().getConnection();
 	}
 	
 	
 	public boolean existeFuncionario(String login, String senha) throws SQLException {
 		
-		String sql = "select * from funcionario where login= ? and senha= ?";
+		String sql = "select * from Funcionario where login= ? and senha= ?";
 		
 		
 		
-		PreparedStatement stmt = this.connection.prepareStatement(sql);
+		PreparedStatement stmt = connection.prepareStatement(sql);
 		stmt.setString(1, login);
 		stmt.setString(2, senha);
 		

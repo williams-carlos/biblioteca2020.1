@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Biblioteca</title>
-<link rel="shortcup-icon" href="imgs/favicon.png" type="image/x-png"/>
+
 </head>
 <body>
 

@@ -24,7 +24,7 @@ public class livroDAO {
 	
 	public void cadastrarLivro(livro livro) throws SQLException {
 		
-		String sql = "insert into obra (titulo, ano_publicacao, tipo_obra ) values (?,?,?)";
+		String sql = "insert into Obra (titulo, ano_publicacao, tipo_obra ) values (?,?,?)";
 		
 		
 		
@@ -42,7 +42,7 @@ public class livroDAO {
 		
 		List<livro> lista = new ArrayList<livro>();
 		
-		String sql = "select * from obra";
+		String sql = "select * from Obra";
 		
 		
 		
