@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   <build>
 	<finalName>${project.artifactId}</finalName> 
-  <build>
+  </build>
   <dependencies>
   		<dependency>
 		    <groupId>mysql</groupId>
