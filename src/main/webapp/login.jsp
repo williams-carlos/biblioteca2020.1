@@ -29,7 +29,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="offset-lg-4 col-lg-4  bg-primary">
-				<form action= "entrar" method="post">
+				<form action= "LoginController" method="post">
 					<div class="form-group" >
 					<br><br>
 					  <input name="login" type="text" placeholder= "Login" class="form-control " id="usr">

@@ -20,8 +20,9 @@ import br.com.projetoGP.model.livro;
  * Servlet implementation class adicionarLivro
  */
 public class adicionarLivro extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	
-    @Override
+ 
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	
     	

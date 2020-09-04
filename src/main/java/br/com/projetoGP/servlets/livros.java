@@ -16,6 +16,7 @@ import br.com.projetoGP.DAO.funcionarioDAO;
  */
 
 public class livros extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 	protected void service(HttpServletRequest request,
             HttpServletResponse response) throws IOException, ServletException
             {

@@ -17,6 +17,7 @@ import br.com.projetoGP.model.livro;
  * Servlet implementation class pesquisarLivros
  */
 public class pesquisarLivros extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
        
     @Override
