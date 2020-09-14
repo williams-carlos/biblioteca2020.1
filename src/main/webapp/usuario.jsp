@@ -30,13 +30,13 @@
 <div class="container">
   <div class="row espaco">
  
- <form action="adicionarObra" method="post">
-    <button class="btn btn-default"> Cadastrar Livro  </button>
+ <form action="cadastroUsuarios" method="post">
+    <button class="btn btn-default"> Cadastrar Usuários  </button>
    </form>
   </div>
   <div class="row espaco">
-  <form action="pesquisarLivros" method="post">
-    <button  class="btn btn-default"> Pesquisar Livros </button>
+  <form action="pesquisarUsuarios" method="post">
+    <button  class="btn btn-default"> Pesquisar Usuários </button>
     </form>
   </div>
 </div>

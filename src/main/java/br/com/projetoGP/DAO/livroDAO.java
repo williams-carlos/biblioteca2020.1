@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.jdbc.Statement;
+
 import br.com.projetoGP.connection.ConnectionFactory;
 import br.com.projetoGP.model.livro;
 
@@ -22,27 +24,33 @@ public class livroDAO {
 	}
 	
 	
-	public void cadastrarLivro(livro livro) throws SQLException {
+	public int cadastrarLivro(livro livro) throws SQLException {
 		
-		String sql = "insert into Obra (titulo, ano_publicacao, tipo_obra ) values (?,?,?)";
+		String sql = "insert into obra (titulo, ano_publicacao, tipo_obra, `codigo_editora(FK)`, isbn, visibilidade ) values (?,?,?,?,?,?)";
 		
 		
 		
-		PreparedStatement stmt = connection.prepareStatement(sql);
+		PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 		stmt.setString(1, livro.getTitulo());
 		stmt.setDate(2, (Date) livro.getAno_publicacao());
 		stmt.setString(3, livro.getTipo_obra());
+		stmt.setInt(4, livro.getCodigo_editora());
+		stmt.setLong(5, livro.getIsbn());
+		stmt.setBoolean(6, true);
 		
 		
 		stmt.executeUpdate();
 
+		ResultSet rs = stmt.getGeneratedKeys();
+		int key = rs.next() ? rs.getInt(1) : 0;
+		return key;
 	}
 	
 	public List<livro> mostrarLivros() throws SQLException{
 		
 		List<livro> lista = new ArrayList<livro>();
 		
-		String sql = "select * from Obra";
+		String sql = "select * from obra";
 		
 		
 		
@@ -55,7 +63,10 @@ public class livroDAO {
 			 Integer cod = rs.getInt("codigo_obra");
 			 String titulo = rs.getString("titulo");
 			 Date ano_publicacao = rs.getDate("ano_publicacao");
-			 String tipo_obra = rs.getNString("tipo_obra");
+			 String tipo_obra = rs.getString("tipo_obra");
+			 Boolean visibilidade = rs.getBoolean("visibilidade");
+			 
+			 if(visibilidade) {
 			 
 			 livro l = new livro();
 	
@@ -66,7 +77,7 @@ public class livroDAO {
 			 
 			 lista.add(l);
 			 
-		 }
+		 }}
 		
 		return lista;
 		

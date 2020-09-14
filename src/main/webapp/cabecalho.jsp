@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="ISO-8859-1">
 <title>Biblioteca</title>
 
@@ -17,7 +18,9 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Funcionários</a>
+      <form action="funcionarios">
+        <button class="nav-link btn btn-default btn-light">Funcionários</button>
+       </form>
       </li>
       
       <li class="nav-item">
@@ -32,6 +35,9 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Empréstimos</a>
       </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="usuarios">Usuários</a>
+      </li>
     </ul>
   </div>  
 </nav>

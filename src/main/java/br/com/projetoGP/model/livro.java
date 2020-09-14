@@ -8,15 +8,35 @@ public class livro {
 	private String titulo;
 	private Date ano_publicacao;
 	private String tipo_obra;
-	private Integer codigo;
+	private int codigo;
+	private int codigo_editora;
+	private long isbn;
+	private boolean visibilidade;
 	
 	
 	
-	
-	public void setCodigo(Integer codigo) {
+	public boolean isVisibilidade() {
+		return visibilidade;
+	}
+	public void setVisibilidade(boolean visibilidade) {
+		this.visibilidade = visibilidade;
+	}
+	public long getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(long isbn) {
+		this.isbn = isbn;
+	}
+	public int getCodigo_editora() {
+		return codigo_editora;
+	}
+	public void setCodigo_editora(int codigo_editora) {
+		this.codigo_editora = codigo_editora;
+	}
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public Integer getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 	public String getTitulo() {

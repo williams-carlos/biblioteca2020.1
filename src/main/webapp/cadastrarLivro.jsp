@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="imgs/icon1.png">
 <meta charset="ISO-8859-1">
 <title>
 			Biblioteca
@@ -16,7 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-
+	 <link rel="stylesheet" href="css/estilo.css">
 	</head>
 <body style="background-image: url(imgs/livro1.jpg);
     background-repeat: no-repeat;
@@ -25,30 +26,97 @@
 
 <c:import url="cabecalho.jsp" />
 <div class="container">
-  <div class="row espaco">
-  
-  
-  
-  <form action = adicionarLivro method="post">
-  <div class="form-group" >
-  <br>
-  <br>
-   <input placeholder="Data" class="form-control" type="date" name="date"></input>
-   <br>
-   <br>
-    <input placeholder="Nome" class="form-control" type="text" name="titulo"></input>
-  <br>
-  <br>
-  <input placeholder="Tipo" class="form-control" type="text" name="tipo"></input>
-   <br>
-   <br>
-  <button  type="submit" class="btn btn-default"> Cadastrar </button>
-  </div>
-  </form>
- 
+<div class="form-group" >
+<form action = adicionarLivro method="post">
+  <div class="row ">
+  <div class= "col-4 espaco">
+	
+		
+		
+			 <input placeholder="Título" class="form-control" type="text" name="titulo"></input>
+			  <br>
+			  <br>
+		  
+			   <input placeholder="Data" class="form-control" type="date" name="date"></input>
+			   <br>
+			   <br>
+			   
+			 <select class="custom-select form-control" id="inputGroupSelect01" name=tipo>
+				    <option selected>Escolher...</option>
+				    <option value="Auto-ajuda">Auto-ajuda</option>
+				    <option value="Aventura">Aventura</option>
+				    <option value="Científico">Científico</option>
+				    <option value="Conto">Conto</option>
+				    <option value="Crônica">Crônica</option>
+				    <option value="Didático">Didático</option>
+				    <option value="Épico">Épico</option>
+				    <option value="Fantasia">Fantasia</option>
+				    <option value="Ficção-científica">Ficção-científica</option>
+				    <option value="Ficção-histórica">Ficção-histórica</option>
+				    <option value="Horror">Horror</option>
+				    <option value="Ação">Ação</option>
+				    <option value="Drama">Drama</option>
+				    <option value="Infantil">Infantil</option>
+				    <option value="Jogos">Jogos</option>
+				    <option value="Manual">Manual</option>
+				    <option value="Poesia">Poesia</option>
+				    <option value="Guia de Viagem">Guia de Viagem</option>
+				  </select>
+		</div>
+ 		
+ 		
+ 		<div class="col-4 espaco">
+ 	
+ 	
+ 		 <input placeholder="Nome do Autor" class="form-control" type="text" name="nomeAutor"></input>
+ 		 <br>
+ 		 <br>
+ 		 
+ 		 <input placeholder="ISBN" class="form-control" type="number" name="isbn"></input>
+ 		 <br>
+ 		 <br>
+ 		 <textarea id="form10" placeholder="Assunto" name="assunto" class="md-textarea form-control" rows="3"></textarea>
+ 		 
+ 		  <br>
+			<br>
+			
+			 
+ 	
+ 	
+ 	
   
     
   </div>
+  
+  <div class="col-4 espaco">
+ 	
+ 	
+ 		 <input placeholder="Nome da Editora" class="form-control" type="text" name="nomeEditora"></input>
+ 		 <br>
+ 		 <br>
+ 		 <input placeholder="Cidade da Editora" class="form-control" type="text" name="cidadeEditora"></input>
+ 		 
+ 		 
+ 		  <br>
+			<br>
+			 <br>
+			<br>
+			 <br>
+			<br>
+ 		  <button  type="submit" class="btn btn-default"> Cadastrar </button>
+
+				  </div>
+				  
+				 
+ 	
+ 	
+  
+    
+  </div>
+  
+   </form>
+  
+ </div>
 </div>
 
 

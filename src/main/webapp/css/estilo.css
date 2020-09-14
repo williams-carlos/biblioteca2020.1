@@ -10,3 +10,20 @@
 	padding-top: 50px
 }
 
+.my-custom-scrollbar {
+position: fixed;
+height: 400px;
+overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+display: block;
+}
+
+.tbody {
+  height: 400px;
+  overflow-y: scroll;	
+  
+}
+
+

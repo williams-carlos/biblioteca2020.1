@@ -40,11 +40,11 @@ public class LoginController extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "/erro1.jsp";
+			return "/erroSQLexception.jsp";
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "/erro2.jsp";
+			return "/erroClassNotFoundException.jsp";
 		}
 		
 		
@@ -76,8 +76,8 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String forward = "";
 					
-		String login = request.getParameter("senha");
-		String senha = request.getParameter("login");
+		String login = request.getParameter("login");
+		String senha = request.getParameter("senha");
 		
 		forward = efetuaLogin(login, senha, request.getSession());
 		

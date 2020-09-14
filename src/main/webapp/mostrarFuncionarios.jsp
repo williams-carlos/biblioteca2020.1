@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,28 +25,41 @@
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;">
-
-
-<c:import url="cabecalho.jsp" />
-<div class="container">
-  <div class="row espaco">
-  <form action="emprestimo" method="post">
-    <button class="btn btn-default"> Realizar Empréstimo  </button>
-    </form>
-  </div>
-  <div class="row espaco">
-    <button  class="btn btn-default"> Pesquisar Livros </button>
-  </div>
-  <div class="row espaco">
-    <button  class="btn btn-default"> Realizar Devolução </button>
-  </div>
-  
+    
+    <c:import url="cabecalho.jsp" />
+    <div class="container">
+    <div class="row">
+    <h2 style="color: white; padding-top:50px" class="offset-lg-4 col-lg-4 text-center">Livros</h2>
+    </div>
+    </div>
+    
+    
+   <div class="container espaco">
+   <div class = "col-lg-8 offset-lg-2 table-wrapper-scroll-y my-custom-scrollbar ">
+  	<table class="table table-striped table-bordered table-dark ">
+	  <thead>
+	    <tr>
+	      <th scope="col">Código</th>
+	      <th scope="col">Nome</th>
+	      <th scope="col">Data de Nascimento</th>
+	    
+	    </tr>
+	  </thead>
+	  <tbody class="tbody">
+	  <c:forEach var="func" items="${lista}" varStatus="id">
+	    <tr>
+	      <th scope="row">${func.id}</th>
+	      <td>${func.nome}</td>
+	      <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${func.dataNascimento}" />
+	      </td>
+	      
+	    </tr>
+	       </c:forEach>
+	  </tbody>
+	</table>
+	</div>
 </div>
-
-
-
-
+    
+    
 </body>
-
-
 </html>

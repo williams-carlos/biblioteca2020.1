@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="imgs/icon1.png">
 <meta charset="ISO-8859-1">
 <title>Biblioteca</title>
 <meta name = "viewport" content = "widht=device-widht, initial-scaele=1.0">
@@ -33,11 +34,9 @@
     </div>
     
     
-   <div class="container">
-   <div class = "col-lg-8 offset-lg-2">
-   <br>
-   <br>
-  	<table class="table table-striped table-dark">
+   <div class="container espaco">
+   <div class = "col-lg-8 offset-lg-2 table-wrapper-scroll-y my-custom-scrollbar ">
+  	<table class="table table-striped table-bordered table-dark ">
 	  <thead>
 	    <tr>
 	      <th scope="col">Código</th>
@@ -46,7 +45,7 @@
 	    
 	    </tr>
 	  </thead>
-	  <tbody>
+	  <tbody class="tbody">
 	  <c:forEach var="livro" items="${lista}" varStatus="id">
 	    <tr>
 	      <th scope="row">${livro.codigo}</th>
