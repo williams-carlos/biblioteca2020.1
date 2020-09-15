@@ -6,7 +6,9 @@ jdk:
 
 sudo: false
 
-script: ./mvn clean install 
+script:
+ - mvn test
+ - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 notifications:
   email: carlos.junior@aluno.uepb.edu.br
