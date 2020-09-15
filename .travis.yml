@@ -1,14 +1,13 @@
 language: java
 # use Java 8
 jdk:
-- openjdk8
+- oraclejdk8
 
 
 sudo: false
 
-script:
- - mvn test
- - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script: mvn clean package
+ 
 
 notifications:
   email: carlos.junior@aluno.uepb.edu.br
@@ -16,6 +15,6 @@ notifications:
   email: adoniscomp@gmail.com
   
 # cache the build tool's caches
-#cache:
-#  directories:
-#  - $HOME/.m2
+cache:
+  directories:
+  - $HOME/.m2
