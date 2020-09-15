@@ -159,4 +159,14 @@
     <servlet-name>pesquisarUsuarios</servlet-name>
     <url-pattern>/pesquisarUsuarios</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>removeObra</display-name>
+    <servlet-name>removeObra</servlet-name>
+    <servlet-class>br.com.projetoGP.servlets.removeObra</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>removeObra</servlet-name>
+    <url-pattern>/removeObra</url-pattern>
+  </servlet-mapping>
 </web-app>

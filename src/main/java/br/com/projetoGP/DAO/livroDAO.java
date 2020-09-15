@@ -83,4 +83,19 @@ public class livroDAO {
 		
 	}
 
+	
+	public void removerLivro(int codigo) throws SQLException {
+		
+		String sql = "update obra set visibilidade = ? where codigo_obra = ?";
+		
+		
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setBoolean(1, false);
+		stmt.setInt(2, codigo);
+		
+		stmt.executeUpdate();
+		
+		
+		
+	}
 }

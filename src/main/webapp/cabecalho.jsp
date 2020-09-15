@@ -17,21 +17,20 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
       <form action="funcionarios">
         <button class="nav-link btn btn-default btn-light">Funcionários</button>
        </form>
-      </li>
+      </li>  -->
       
+       
       <li class="nav-item">
-    <form action="livros">
-        <button class="nav-link btn btn-default btn-light" >Livros</button>
-    </form>
+        <a class="nav-link" href="livros">Livros</a>
       </li>
           
-      <li class="nav-item">
+   <!--    <li class="nav-item">
         <a class="nav-link" href="#">Alunos</a>
-      </li>   
+      </li>   --> 
       <li class="nav-item">
         <a class="nav-link" href="#">Empréstimos</a>
       </li> 
