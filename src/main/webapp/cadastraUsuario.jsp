@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="imgs/icon1.png">
 <meta charset="ISO-8859-1">
 <title>
 			Biblioteca
@@ -91,11 +92,11 @@
 			 <br>
 			 <br>
 		
-			<select class="custom-select form-control" id="inputGroupSelect01" name=tipo>
+			<select class="custom-select form-control" id="inputGroupSelect02" name=tipo>
 				    <option selected>Escolher...</option>
-				    <option value="Auto-ajuda">Funcionário</option>
-				    <option value="Aventura">Cliente</option>
-				    <option value="Científico">Administrador</option>
+				    <option value="Funcionario">Funcionário</option>
+				    <option value="Cliente">Cliente</option>
+				    <option value="Administrador">Administrador</option>
 				  </select>
 		 
  	</div>

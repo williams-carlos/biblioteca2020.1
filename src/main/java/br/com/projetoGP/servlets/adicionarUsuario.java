@@ -81,7 +81,7 @@ public class adicionarUsuario extends HttpServlet {
 			u.setTipo(tipo);
 			u.setVisibilidade(true);
 			
-	    	ud.cadastrarFuncionario(u);
+	    	ud.cadastrarUsuario(u);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

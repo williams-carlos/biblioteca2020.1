@@ -22,7 +22,7 @@ public class usuarioDAO {
 		connection = new ConnectionFactory().getConnection();
 	}
 	
-public int cadastrarFuncionario(usuario usuario) throws SQLException {
+public int cadastrarUsuario(usuario usuario) throws SQLException {
 		
 		String sql = "insert into usuario (nome_usuario, endereco_logradouro, endereco_numero,"
 				+ "endereco_complemento, endereco_bairro, endereco_cidade, endereco_UF,"
@@ -115,5 +115,50 @@ public int cadastrarFuncionario(usuario usuario) throws SQLException {
 		}
 
 		
+		public boolean existeUsuario(String login, String senha) throws SQLException {
+			
+			String sql = "select * from usuario where login= ? and senha= ? and visibilidade = 1";
+			
+			
+			
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, login);
+			stmt.setString(2, senha);
+			
+			 ResultSet rs = stmt.executeQuery();
+			 
+			 while (rs.next()) {
+				 return true;
+			 }
+			return false;
+		}
+		
+		public usuario pegaUsuario(String login, String senha) throws SQLException {
+			
+			
+			usuario usu = new usuario();
+			String sql = "select * from usuario where login= ? and senha= ?";
+			
+			
+			
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, login);
+			stmt.setString(2, senha);
+			
+			 ResultSet rs = stmt.executeQuery();
+			 
+			 while (rs.next()) {
+				 
+				 String nome = rs.getString("nome_usuario");
+				 String tipo = rs.getString("tipo");
+			
+				 usu.setNome_usuario(nome);
+				 usu.setTipo(tipo);
+				 
+				 
+			
+			 }
+			return usu;
+		}
 
 }
