@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="imgs/icon1.png">
 <meta charset="ISO-8859-1">
 <title>Biblioteca</title>
 <meta name = "viewport" content = "widht=device-widht, initial-scaele=1.0">
@@ -15,7 +16,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	
 
     <link rel="stylesheet" href="css/estilo.css">
   </head>
@@ -28,7 +30,14 @@
 
 <c:import url="cabecalho.jsp" />
 <div class="container">
-  <div class="row espaco">
+	<div class="row">
+		<div class="offset-lg-10 espaco" style="color: white">
+			<p><i class="fas fa-user"> </i> ${usuarioLogado.tipo} : ${usuarioLogado.nome_usuario}</p>
+		</div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
   <form action="emprestimo" method="post">
     <button class="btn btn-default"> Realizar Empréstimo  </button>
     </form>

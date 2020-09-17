@@ -16,8 +16,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	
 
 
     <link rel="stylesheet" href="css/estilo.css">
@@ -43,20 +41,18 @@
 	    <tr>
 	      <th scope="col">Código</th>
 	      <th scope="col">Nome</th>
-	      <th scope="col">Data</th>
-	      <th scope="col">Remover</th>
-	     
+	      <th scope="col">Data de Nascimento</th>
 	    
 	    </tr>
 	  </thead>
 	  <tbody class="tbody">
-	  <c:forEach var="livro" items="${lista}" varStatus="id">
+	  <c:forEach var="usu" items="${lista}" varStatus="id">
 	    <tr>
-	      <th scope="row">${livro.codigo}</th>
-	      <td>${livro.titulo}</td>
-	      <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${livro.ano_publicacao}" />
+	      <th scope="row">${usu.codigo}</th>
+	      <td>${usu.nome_usuario}</td>
+	      <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${usu.dataNascimento}" />
 	      </td>
-	      <td><a href="removeObra?id=${livro.codigo}"><i class="fas fa-trash-alt"></i></a></td>
+	      
 	    </tr>
 	       </c:forEach>
 	  </tbody>

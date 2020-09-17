@@ -5,9 +5,9 @@
 <head>
 <link rel="shortcut icon" href="imgs/icon1.png">
 <meta charset="ISO-8859-1">
-<title>Biblioteca</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<h2>Usuário Inválido, volte e tente novamente</h2>
+<h2>Um erro foi lançado: ClassNotFoundException</h2>
 </body>
 </html>

@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.projetoGP.DAO.funcionarioDAO;
+import br.com.projetoGP.DAO.usuarioDAO;
 import br.com.projetoGP.model.funcionario;
+import br.com.projetoGP.model.usuario;
 
 /**
  * Servlet implementation class LoginController
@@ -28,33 +30,35 @@ public class LoginController extends HttpServlet {
     }
 
     
-    public String efetuaLogin(String login, String senha, HttpSession sessao)  {
+    public String efetuaLogin(String login, String senha, HttpSession sessao) throws ClassNotFoundException, SQLException  {
     	
     	boolean action = false;
 				
 		
 		try {
 			
-	    	funcionarioDAO f = new funcionarioDAO();
-			action = f.existeFuncionario(login, senha);
+	    	usuarioDAO f = new usuarioDAO();
+			action = f.existeUsuario(login, senha);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "/erro1.jsp";
+			return "/erroSQLexception.jsp";
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "/erro2.jsp";
+			return "/erroClassNotFoundException.jsp";
 		}
 		
 		
 		if (action) {
-			funcionario func = new funcionario();
-			func.setLogin(login);
-			func.setSenha(senha);
+			
+			usuarioDAO usud = new usuarioDAO();
+			usuario usu = usud.pegaUsuario(login, senha);
+			
 	    	
 	    
-			sessao.setAttribute("usuarioLogado", func );
+			sessao.setAttribute("usuarioLogado", usu );
+			
 			return "/telaPrincipal.jsp";
 		}else {
 			return  "/naoLogin.jsp";
@@ -76,12 +80,24 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String forward = "";
 					
-		String login = request.getParameter("senha");
-		String senha = request.getParameter("login");
+		String login = request.getParameter("login");
+		String senha = request.getParameter("senha");
 		
-		forward = efetuaLogin(login, senha, request.getSession());
+		try {
+			forward = efetuaLogin(login, senha, request.getSession());
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		RequestDispatcher view = request.getRequestDispatcher(forward);
+		
+		request.setAttribute("usuarioLogado", request.getSession().getAttribute("usuarioLogado"));
+		
 		view.forward(request, response);
 	}
 

@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" href="imgs/icon1.png">
 <meta charset="ISO-8859-1">
 <title>
 			Biblioteca
@@ -17,10 +16,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
-
-
-    <link rel="stylesheet" href="css/estilo.css"></head>
-</head>
+	 <link rel="stylesheet" href="css/estilo.css">
+	</head>
 <body style="background-image: url(imgs/livro1.jpg);
     background-repeat: no-repeat;
     width: 100%;
@@ -29,16 +26,31 @@
 <c:import url="cabecalho.jsp" />
 <div class="container">
   <div class="row espaco">
- 
- <form action="adicionarObra" method="post">
-    <button class="btn btn-default"> Cadastrar Livro  </button>
-   </form>
-  </div>
-  <div class="row espaco">
-  <form action="pesquisarLivros" method="post">
-    <button  class="btn btn-default"> Pesquisar Livros </button>
-    </form>
-  </div>
+	<form action = adicionarFuncionario method="post">
+		<div class="form-group" >
+			<input placeholder="Nome" class="form-control" type="text" name="nome"></input>
+			 <br>
+			 <br>
+		  
+			 <input placeholder="Data" class="form-control" type="date" name="date"></input>
+			 <br>
+			 <br>
+		
+ 		 	<input placeholder="Login" class="form-control" type="text" name="login"></input>
+ 		 	<br>
+ 			<br>
+ 		 
+ 		 	<input placeholder="Senha" class="form-control" type="password" name="senha"></input>
+ 		 	<br>
+ 		 	<br>
+ 		 
+ 		  	<button  type="submit" class="btn btn-default"> Cadastrar </button>
+		</div>
+				  
+	</form>
+ </div>
+  
+
 </div>
 
 
