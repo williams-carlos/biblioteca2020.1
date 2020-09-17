@@ -1,20 +1,32 @@
 language: java
-# use Java 8
+# use Java 11
 jdk:
-- oraclejdk8
+  - oraclejdk11
 
+branches: 
+  - master
+  - developer 
+  
 
+# see https://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
 sudo: false
 
-script: mvn clean package
- 
+script: 
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+# - mvn test -B
+# mvn clean package
 
 notifications:
   email: carlos.junior@aluno.uepb.edu.br
   email: priscylla.amaral@aluno.uepb.edu.br
   email: adoniscomp@gmail.com
-  
+
+
 # cache the build tool's caches
-cache:
-  directories:
-  - $HOME/.m2
+#cache:
+ # directories:
+  #- $HOME/.m2
+  #- $HOME/.gradle
+ 
+
+
