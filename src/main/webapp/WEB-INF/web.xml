@@ -169,4 +169,24 @@
     <servlet-name>removeObra</servlet-name>
     <url-pattern>/removeObra</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>editarUsuario</display-name>
+    <servlet-name>editarUsuario</servlet-name>
+    <servlet-class>br.com.projetoGP.servlets.editarUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editarUsuario</servlet-name>
+    <url-pattern>/editarUsuario</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>editarUsuario2</display-name>
+    <servlet-name>editarUsuario2</servlet-name>
+    <servlet-class>br.com.projetoGP.servlets.editarUsuario2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editarUsuario2</servlet-name>
+    <url-pattern>/editarUsuario2</url-pattern>
+  </servlet-mapping>
 </web-app>

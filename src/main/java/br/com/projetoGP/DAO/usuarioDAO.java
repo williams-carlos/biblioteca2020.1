@@ -160,5 +160,88 @@ public int cadastrarUsuario(usuario usuario) throws SQLException {
 			 }
 			return usu;
 		}
+		
+		public usuario pegaUsuarioID(int id) throws SQLException {
+			
+			
+			usuario usu = new usuario();
+			String sql = "select * from usuario where idUsuario= ?";
+			
+			
+			
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, id);
+			
+			
+			 ResultSet rs = stmt.executeQuery();
+			 
+			 while (rs.next()) {
+				 
+				 String nome = rs.getString("nome_usuario");
+				 String logradouro = rs.getNString("endereco_logradouro");
+				 int numero = rs.getInt("endereco_numero");
+				 String complemento = rs.getString("endereco_complemento");
+				 String bairro = rs.getString("endereco_bairro");
+				 String cidade = rs.getString("endereco_cidade");
+				 String uf = rs.getString("endereco_UF");
+				 Long cep = rs.getLong("endereco_CEP");
+				 Long telefone = rs.getLong("telefone");
+				 Long cpf = rs.getLong("CPF");
+				 String login = rs.getString("login");
+				 String senha = rs.getString("senha");
+				 Date data = rs.getDate("dataNascimento");
+				 String tipo = rs.getString("tipo");
+				 
+			
+				 usu.setNome_usuario(nome);
+				 usu.setEndereco_logradouro(logradouro);
+				 usu.setEndereco_numero(numero);
+				 usu.setEndereco_complemento(complemento);
+				 usu.setEndereco_bairro(bairro);
+				 usu.setEndereco_cidade(cidade);
+				 usu.setEndereco_UF(uf);
+				 usu.setEndereco_CEP(cep);
+				 usu.setTelefone(telefone);
+				 usu.setCpf(cpf);
+				 usu.setLogin(login);
+				 usu.setSenha(senha);
+				 usu.setDataNascimento(data);
+				 usu.setTipo(tipo);
+				 usu.setCodigo(id);
+				 
+				 
+			
+			 }
+			return usu;
+		}
+		
+		
+		public void editarUsuario(usuario user) throws SQLException {
+			String sql = ("update usuario set nome_usuario = ?, endereco_logradouro =?, endereco_numero =?, " 
+								+ "endereco_complemento=?, endereco_bairro=?, endereco_cidade=?, endereco_UF=?, "
+							+ "endereco_CEP=?, telefone=?, cpf=?, login=?, senha=?, dataNascimento=?, tipo=? where idUsuario = ?");
+			
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, user.getNome_usuario());
+			stmt.setString(2, user.getEndereco_logradouro());
+			stmt.setInt(3, user.getEndereco_numero());
+			stmt.setString(4, user.getEndereco_complemento());
+			stmt.setString(5, user.getEndereco_bairro());
+			stmt.setString(6, user.getEndereco_cidade());
+			stmt.setString(7, user.getEndereco_UF());
+			stmt.setLong(8, user.getEndereco_CEP());
+			stmt.setLong(9, user.getTelefone());
+			stmt.setLong(10, user.getCpf());
+			stmt.setString(11, user.getLogin());
+			stmt.setString(12, user.getSenha());
+			stmt.setDate(13, user.getDataNascimento());
+			stmt.setString(14, user.getTipo());
+			stmt.setInt(15, user.getCodigo());
+		
+			
+			
+			stmt.executeUpdate();
+			
+		}
 
 }
