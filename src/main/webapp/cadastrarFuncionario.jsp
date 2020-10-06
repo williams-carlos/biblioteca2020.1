@@ -28,19 +28,19 @@
   <div class="row espaco">
 	<form action = adicionarFuncionario method="post">
 		<div class="form-group" >
-			<input placeholder="Nome" class="form-control" type="text" name="nome"></input>
+			<input placeholder="Nome" class="form-control" type="text" name="nome" id="nome"></input>
 			 <br>
 			 <br>
 		  
-			 <input placeholder="Data" class="form-control" type="date" name="date"></input>
+			 <input placeholder="Data" class="form-control" type="date" name="date" id="data"></input>
 			 <br>
 			 <br>
 		
- 		 	<input placeholder="Login" class="form-control" type="text" name="login"></input>
+ 		 	<input placeholder="Login" class="form-control" type="text" name="login" id="login"></input>
  		 	<br>
  			<br>
  		 
- 		 	<input placeholder="Senha" class="form-control" type="password" name="senha"></input>
+ 		 	<input placeholder="Senha" class="form-control" type="password" name="senha" id="senha"></input>
  		 	<br>
  		 	<br>
  		 

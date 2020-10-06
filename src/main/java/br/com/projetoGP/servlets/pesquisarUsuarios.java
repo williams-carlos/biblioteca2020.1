@@ -20,19 +20,49 @@ import br.com.projetoGP.model.usuario;
  */
 public class pesquisarUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
 	@Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    	
-    	usuarioDAO ud;
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		usuarioDAO ud;
 		try {
+
 			ud = new usuarioDAO();
-			List<usuario> lista = ud.mostrarUsuarios();
-			req.setAttribute("lista", lista);
-			
-			RequestDispatcher rd = req.getRequestDispatcher("mostrarUsuarios.jsp");
-	        rd.forward(req,resp);
-	        
+			if (req.getParameter("id") == null) {
+
+				List<usuario> lista = ud.mostrarUsuarios();
+				req.setAttribute("lista", lista);
+
+				RequestDispatcher rd = req.getRequestDispatcher("mostrarUsuarios.jsp");
+				rd.forward(req, resp);
+			}
+
+			else if (Integer.parseInt(req.getParameter("id")) == 1) {
+				String nome = req.getParameter("nome1");
+				List<usuario> lista = ud.mostrarUsuariosPorNome(nome);
+				req.setAttribute("lista", lista);
+				RequestDispatcher rd = req.getRequestDispatcher("mostrarUsuarios.jsp");
+				rd.forward(req, resp);
+			}
+
+			else if (Integer.parseInt(req.getParameter("id")) == 2) {
+
+				if (req.getParameter("cpf1") != "") {
+
+					long cpf = Long.parseLong(req.getParameter("cpf1"));
+					List<usuario> lista = ud.mostrarUsuariosPorCPF(cpf);
+					req.setAttribute("lista", lista);
+					RequestDispatcher rd = req.getRequestDispatcher("mostrarUsuarios.jsp");
+					rd.forward(req, resp);
+				} else {
+					List<usuario> lista = ud.mostrarUsuarios();
+					req.setAttribute("lista", lista);
+
+					RequestDispatcher rd = req.getRequestDispatcher("mostrarUsuarios.jsp");
+					rd.forward(req, resp);
+					
+				}
+			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -40,8 +70,6 @@ public class pesquisarUsuarios extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
-    	
-    	
-    }
+
+	}
 }

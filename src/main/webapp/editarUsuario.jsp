@@ -35,18 +35,16 @@
 			<input readonly="true" name="codigo" value="${usuario.codigo}"></input>
 			<br>
 			<br>
-			<br>
+			<label style="color:white">Nome</label>
 			<input placeholder="Nome" class="form-control" type="text" name="nome_usuario" value="${usuario.nome_usuario} "></input>
 			 <br>
-			 <br>
+			 <label style="color:white">CPF</label>
  		 	<input placeholder="CPF" class="form-control" type="text" name="cpf" value="${usuario.cpf}"></input>
  		 	<br>
- 			<br>
- 			
+ 			<label style="color:white">Login</label>
  			<input placeholder="Login" class="form-control" type="text" name="login" value="${usuario.login}"></input>
  		 	<br>
- 		 	<br>
- 		 
+ 		 	<label style="color:white">Senha</label>
  		 	<input placeholder="Senha" class="form-control" type="password" name="senha" value="${usuario.senha}" ></input>
  		 	<br>
  		 	<br>
@@ -57,22 +55,19 @@
  	
  	<div class="col-4">
  	
+ 			<label style="color:white">Data</label>
  			<input placeholder="Data" class="form-control" type="date" name="dataNascimento" value="${usuario.dataNascimento}"></input>
 			<br>
-			<br>
- 	
+			<label style="color:white">Telefone</label>
  			<input placeholder="Telefone" class="form-control" type="tel" name="telefone" value="${usuario.telefone}"></input>
 			 <br>
-			 <br>
-		
+			 <label style="color:white">Logradouro</label>
 			<input placeholder="Logradouro" class="form-control" type="text" name="endereco_logradouro" value="${usuario.endereco_logradouro}"></input>
 			 <br>
-			 <br>
-		  
+			 <label style="color:white">Número</label>
 			 <input placeholder="Número" class="form-control" type="number" name="endereco_numero" value="${usuario.endereco_numero}"></input>
 			 <br>
-			 <br>
-		
+			 <label style="color:white">Complemento</label>
  		 	<input placeholder="Complemento" class="form-control" type="text" name="endereco_complemento" value="${usuario.endereco_complemento}"></input>
  		 	<br>
  			<br>
@@ -83,22 +78,20 @@
  	</div>
  	
  	<div class="col-4">
- 	
+ 	<label style="color:white">Bairro</label>
  	<input placeholder="Bairro" class="form-control" type="text" name="endereco_bairro" value="${usuario.endereco_bairro}"></input>
  		 	<br>
- 		 	<br>
- 	
+ 		 	<label style="color:white">Cidade</label>
  	<input placeholder="Cidade" class="form-control" type="text" name="endereco_cidade" value="${usuario.endereco_cidade}"></input>
 			 <br>
-			 <br>
-			 
+			 <label style="color:white">UF</label>
 			 <input placeholder="UF" class="form-control" type="text" name="endereco_UF" value="${usuario.endereco_UF}"></input>
 			 <br>
-			 <br>
+			 <label style="color:white">CEP</label>
 			 <input placeholder="CEP" class="form-control" type="number" name="endereco_CEP" value="${usuario.endereco_CEP}"></input>
 			 <br>
 			 <br>
-		
+		<label style="color:white">Tipo</label>
 			<select class="custom-select form-control" id="inputGroupSelect02" name=tipo>
 				    <option selected>${usuario.tipo}</option>
 				    <option value="Funcionario">Funcionário</option>

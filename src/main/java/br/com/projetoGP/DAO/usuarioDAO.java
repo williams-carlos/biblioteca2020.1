@@ -244,4 +244,137 @@ public int cadastrarUsuario(usuario usuario) throws SQLException {
 			
 		}
 
+		
+		public void removerUsuario(int codigo) throws SQLException {
+			
+			String sql = "update usuario set visibilidade = ? where idUsuario = ?";
+			
+			
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setBoolean(1, false);
+			stmt.setInt(2, codigo);
+			
+			stmt.executeUpdate();
+			
+			
+			
+		}
+		
+		public List<usuario> mostrarUsuariosPorNome(String nomeUsuario) throws SQLException {
+			List<usuario> lista = new ArrayList<usuario>();
+			
+			String sql = "select * from usuario where nome_usuario like ? ";
+			
+			
+			
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, "%"+nomeUsuario+"%");
+			
+			
+			 ResultSet rs = stmt.executeQuery();
+			 
+			 while (rs.next()) {
+				 Integer id = rs.getInt("idUsuario");
+				 String nome = rs.getString("nome_usuario");
+				 String logradouro = rs.getString("endereco_logradouro");
+				 int numero = rs.getInt("endereco_numero");
+				 String complemento = rs.getString("endereco_complemento");
+				 String bairro = rs.getString("endereco_bairro");
+				 String cidade = rs.getString("endereco_cidade");
+				 String uf = rs.getString("endereco_UF");
+				 long cep = rs.getLong("endereco_CEP");
+				 long telefone = rs.getLong("telefone");
+				 long cpf = rs.getLong("CPF");
+				 String login = rs.getNString("login");
+				 String senha = rs.getNString("senha");
+				 Date data = rs.getDate("dataNascimento");
+				 String tipo = rs.getString("tipo");
+				 boolean visibilidade = rs.getBoolean("visibilidade");
+				
+				 if(visibilidade) {
+					 usuario u = new usuario();
+					 u.setCodigo(id);
+					 u.setNome_usuario(nome);
+					 u.setEndereco_logradouro(logradouro);
+					 u.setEndereco_numero(numero);
+					 u.setEndereco_complemento(complemento);
+					 u.setEndereco_bairro(bairro);
+					 u.setEndereco_cidade(cidade);
+					 u.setEndereco_UF(uf);
+					 u.setEndereco_CEP(cep);
+					 u.setTelefone(telefone);
+					 u.setCpf(cpf);
+					 u.setLogin(login);
+					 u.setSenha(senha);
+					 u.setDataNascimento(data);
+					 u.setTipo(tipo);
+					 
+					 
+					 
+					 lista.add(u);
+				 }
+			 }
+			
+		
+			return lista;
+		}
+		
+		public List<usuario> mostrarUsuariosPorCPF(long cpfUsuario) throws SQLException {
+			List<usuario> lista = new ArrayList<usuario>();
+			
+			String sql = "select * from usuario where CPF = ? ";
+			
+			
+			
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setLong(1, cpfUsuario);
+			
+			
+			 ResultSet rs = stmt.executeQuery();
+			 
+			 while (rs.next()) {
+				 Integer id = rs.getInt("idUsuario");
+				 String nome = rs.getString("nome_usuario");
+				 String logradouro = rs.getString("endereco_logradouro");
+				 int numero = rs.getInt("endereco_numero");
+				 String complemento = rs.getString("endereco_complemento");
+				 String bairro = rs.getString("endereco_bairro");
+				 String cidade = rs.getString("endereco_cidade");
+				 String uf = rs.getString("endereco_UF");
+				 long cep = rs.getLong("endereco_CEP");
+				 long telefone = rs.getLong("telefone");
+				 long cpf = rs.getLong("CPF");
+				 String login = rs.getNString("login");
+				 String senha = rs.getNString("senha");
+				 Date data = rs.getDate("dataNascimento");
+				 String tipo = rs.getString("tipo");
+				 boolean visibilidade = rs.getBoolean("visibilidade");
+				
+				 if(visibilidade) {
+					 usuario u = new usuario();
+					 u.setCodigo(id);
+					 u.setNome_usuario(nome);
+					 u.setEndereco_logradouro(logradouro);
+					 u.setEndereco_numero(numero);
+					 u.setEndereco_complemento(complemento);
+					 u.setEndereco_bairro(bairro);
+					 u.setEndereco_cidade(cidade);
+					 u.setEndereco_UF(uf);
+					 u.setEndereco_CEP(cep);
+					 u.setTelefone(telefone);
+					 u.setCpf(cpf);
+					 u.setLogin(login);
+					 u.setSenha(senha);
+					 u.setDataNascimento(data);
+					 u.setTipo(tipo);
+					 
+					 
+					 
+					 lista.add(u);
+				 }
+			 }
+			
+		
+			return lista;
+		}
 }

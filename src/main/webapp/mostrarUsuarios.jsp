@@ -37,6 +37,24 @@
     
     
    <div class="container espaco">
+   <div class = "row">
+   <div class = col-lg-2>
+   		<form action= pesquisarUsuarios?id=1 method=post>
+   		<label style="color:white">Pesquisar por Nome:</label>
+   		<input placeholder="Nome" name=	nome1></input>
+   		<button type="submit" class="btn btn-default">Pesquisar</button>
+   		</form>
+   		<br> <br>
+   		<form action= pesquisarUsuarios?id=2 method=post>
+   		<label style="color:white">Pesquisar por CPF:</label>
+   		<input placeholder="CPF" name=	cpf1></input>
+   		<button type="submit" class="btn btn-default">Pesquisar</button>
+   		</form>
+   		
+   </div>
+
+   		
+
    <div class = "col-lg-8 offset-lg-2 table-wrapper-scroll-y my-custom-scrollbar ">
   	<table class="table table-striped table-bordered table-dark ">
 	  <thead>
@@ -45,6 +63,7 @@
 	      <th scope="col">Nome</th>
 	      <th scope="col">Data de Nascimento</th>
 	      <th scope="col">Editar</th>
+	      <th scope="col">Remover</th>
 	    
 	    </tr>
 	  </thead>
@@ -55,13 +74,15 @@
 	      <td>${usu.nome_usuario}</td>
 	      <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${usu.dataNascimento}" />
 	      <td><a href="editarUsuario?id=${usu.codigo}"><i class="fas fa-edit"></i></a></td>
-	      </td>
+	      <td><a href="removeUsuario?codigo=${usu.codigo}"><i class="fas fa-trash-alt"></i></a></td>
+	      
 	      
 	    </tr>
 	       </c:forEach>
 	  </tbody>
 	</table>
 	</div>
+</div>
 </div>
     
     

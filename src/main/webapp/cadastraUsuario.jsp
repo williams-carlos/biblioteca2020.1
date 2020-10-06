@@ -33,22 +33,22 @@
   <div class="col-4">
 	
 
-			<input placeholder="Nome" class="form-control" type="text" name="nome_usuario"></input>
+			<input placeholder="Nome" class="form-control" type="text" name="nome_usuario" id="nomeUsuario"></input>
 			 <br>
 			 <br>
- 		 	<input placeholder="CPF" class="form-control" type="text" name="cpf"></input>
+ 		 	<input placeholder="CPF" class="form-control" type="text" name="cpf" id="cpf"></input>
  		 	<br>
  			<br>
  			
- 			<input placeholder="Login" class="form-control" type="text" name="login"></input>
+ 			<input placeholder="Login" class="form-control" type="text" name="login" id="login"></input>
  		 	<br>
  		 	<br>
  		 
- 		 	<input placeholder="Senha" class="form-control" type="password" name="senha"></input>
+ 		 	<input placeholder="Senha" class="form-control" type="password" name="senha" id="senha"></input>
  		 	<br>
  		 	<br>
  		 	
- 		 	<input placeholder="Data" class="form-control" type="date" name="dataNascimento"></input>
+ 		 	<input placeholder="Data" class="form-control" type="date" name="dataNascimento" id="dataNascimento"></input>
 			 <br>
 			 <br>
 
@@ -56,23 +56,23 @@
  	
  	<div class="col-4">
  	
- 			<input placeholder="Telefone" class="form-control" type="tel" name="telefone"></input>
+ 			<input placeholder="Telefone" class="form-control" type="tel" name="telefone" id="telefone"></input>
 			 <br>
 			 <br>
 		
-			<input placeholder="Logradouro" class="form-control" type="text" name="endereco_logradouro"></input>
+			<input placeholder="Logradouro" class="form-control" type="text" name="endereco_logradouro" id="logradouro"></input>
 			 <br>
 			 <br>
 		  
-			 <input placeholder="Número" class="form-control" type="number" name="endereco_numero"></input>
+			 <input placeholder="Número" class="form-control" type="number" name="endereco_numero" id="numero"></input>
 			 <br>
 			 <br>
 		
- 		 	<input placeholder="Complemento" class="form-control" type="text" name="endereco_complemento"></input>
+ 		 	<input placeholder="Complemento" class="form-control" type="text" name="endereco_complemento" id="complemento"></input>
  		 	<br>
  			<br>
  		 
- 		 	<input placeholder="Bairro" class="form-control" type="text" name="endereco_bairro"></input>
+ 		 	<input placeholder="Bairro" class="form-control" type="text" name="endereco_bairro" id="bairro"></input>
  		 	<br>
  		 	<br>
  		 	
@@ -81,18 +81,18 @@
  	
  	<div class="col-4">
  	
- 	<input placeholder="Cidade" class="form-control" type="text" name="endereco_cidade"></input>
+ 	<input placeholder="Cidade" class="form-control" type="text" name="endereco_cidade" id="cidade"></input>
 			 <br>
 			 <br>
 			 
-			 <input placeholder="UF" class="form-control" type="text" name="endereco_UF"></input>
+			 <input placeholder="UF" class="form-control" type="text" name="endereco_UF" id="uf"></input>
 			 <br>
 			 <br>
-			 <input placeholder="CEP" class="form-control" type="number" name="endereco_CEP"></input>
+			 <input placeholder="CEP" class="form-control" type="number" name="endereco_CEP" id="cep"></input>
 			 <br>
 			 <br>
 		
-			<select class="custom-select form-control" id="inputGroupSelect02" name=tipo>
+			<select class="custom-select form-control" id="inputGroupSelect02" name=tipo id="tipo">
 				    <option selected>Escolher...</option>
 				    <option value="Funcionario">Funcionário</option>
 				    <option value="Cliente">Cliente</option>

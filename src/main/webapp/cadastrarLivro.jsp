@@ -33,15 +33,15 @@
 	
 		
 		
-			 <input placeholder="Título" class="form-control" type="text" name="titulo"></input>
+			 <input placeholder="Título" class="form-control" type="text" name="titulo" id="titulo"></input>
 			  <br>
 			  <br>
 		  
-			   <input placeholder="Data" class="form-control" type="date" name="date"></input>
+			   <input placeholder="Data" class="form-control" type="date" name="date" id="data"></input>
 			   <br>
 			   <br>
 			   
-			 <select class="custom-select form-control" id="inputGroupSelect01" name=tipo>
+			 <select class="custom-select form-control" id="inputGroupSelect01" name=tipo id="tipo">
 				    <option selected>Escolher...</option>
 				    <option value="Auto-ajuda">Auto-ajuda</option>
 				    <option value="Aventura">Aventura</option>
@@ -68,14 +68,14 @@
  		<div class="col-4 espaco">
  	
  	
- 		 <input placeholder="Nome do Autor" class="form-control" type="text" name="nomeAutor"></input>
+ 		 <input placeholder="Nome do Autor" class="form-control" type="text" name="nomeAutor" id="nomeAutor"></input>
  		 <br>
  		 <br>
  		 
- 		 <input placeholder="ISBN" class="form-control" type="number" name="isbn"></input>
+ 		 <input placeholder="ISBN" class="form-control" type="number" name="isbn" id="isbn"></input>
  		 <br>
  		 <br>
- 		 <textarea id="form10" placeholder="Assunto" name="assunto" class="md-textarea form-control" rows="3"></textarea>
+ 		 <textarea id="form10" placeholder="Assunto" name="assunto" class="md-textarea form-control" rows="3" id="assunto"></textarea>
  		 
  		  <br>
 			<br>
@@ -91,10 +91,10 @@
   <div class="col-4 espaco">
  	
  	
- 		 <input placeholder="Nome da Editora" class="form-control" type="text" name="nomeEditora"></input>
+ 		 <input placeholder="Nome da Editora" class="form-control" type="text" name="nomeEditora" id="nomeEditora"></input>
  		 <br>
  		 <br>
- 		 <input placeholder="Cidade da Editora" class="form-control" type="text" name="cidadeEditora"></input>
+ 		 <input placeholder="Cidade da Editora" class="form-control" type="text" name="cidadeEditora" id="cidadeEditora"></input>
  		 
  		 
  		  <br>
