@@ -50,7 +50,8 @@ public class livroDAO {
 		
 		List<livro> lista = new ArrayList<livro>();
 		
-		String sql = "select * from obra";
+		String sql = "SELECT * FROM obra o, autor a, obra_autor oa WHERE o.codigo_obra = oa.codigo_obra AND "  + 
+							                                                      "oa.codigo_autor = a.idAutor";
 		
 		
 		
@@ -62,19 +63,21 @@ public class livroDAO {
 		 while (rs.next()) {
 			 Integer cod = rs.getInt("codigo_obra");
 			 String titulo = rs.getString("titulo");
+			 long isbn	= rs.getLong("isbn");
 			 Date ano_publicacao = rs.getDate("ano_publicacao");
 			 String tipo_obra = rs.getString("tipo_obra");
 			 Boolean visibilidade = rs.getBoolean("visibilidade");
-			 
+			 String nome_autor = rs.getString("nome_autor");
 			 if(visibilidade) {
 			 
 			 livro l = new livro();
 	
 			 l.setCodigo(cod);
 			 l.setTitulo(titulo);
+			 l.setIsbn(isbn);
 			 l.setAno_publicacao(ano_publicacao);
 			 l.setTipo_obra(tipo_obra);
-			 
+			 l.getAutor().setNome_autor(nome_autor);
 			 lista.add(l);
 			 
 		 }}
@@ -98,4 +101,125 @@ public class livroDAO {
 		
 		
 	}
+	
+public List<livro> buscarIsbn(long isbnl) throws SQLException{
+		
+		List<livro> lista = new ArrayList<livro>();
+		
+		String sql = "SELECT * FROM obra o, autor a, obra_autor oa WHERE o.codigo_obra = oa.codigo_obra AND " + 
+							                                              "oa.codigo_autor = a.idAutor AND isbn like ?";
+		
+		
+		
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setString(1, isbnl+"%");
+		
+		 ResultSet rs = stmt.executeQuery();
+		 
+		 while (rs.next()) {
+			 Integer cod = rs.getInt("codigo_obra");
+			 String titulo = rs.getString("titulo");
+			 long isbn	= rs.getLong("isbn");
+			 Date ano_publicacao = rs.getDate("ano_publicacao");
+			 String tipo_obra = rs.getString("tipo_obra");
+			 Boolean visibilidade = rs.getBoolean("visibilidade");
+			 String nome_autor = rs.getString("nome_autor");
+			 if(visibilidade) {
+			 
+			 livro l = new livro();
+	
+			 l.setCodigo(cod);
+			 l.setTitulo(titulo);
+			 l.setIsbn(isbn);
+			 l.setAno_publicacao(ano_publicacao);
+			 l.setTipo_obra(tipo_obra);
+			 l.getAutor().setNome_autor(nome_autor);
+			 lista.add(l);
+			 
+		 }}
+		
+		return lista;
+		
+	}
+
+
+public List<livro> buscarAutor(String autor) throws SQLException {
+	List<livro> lista = new ArrayList<livro>();
+	
+	String sql = "SELECT * FROM obra o, autor a, obra_autor oa WHERE o.codigo_obra = oa.codigo_obra AND " + 
+			                                                        "oa.codigo_autor = a.idAutor AND "
+			                                                     +  "a.nome_autor  like ?";
+	
+	
+	
+	PreparedStatement stmt = connection.prepareStatement(sql);
+	stmt.setString(1, "%"+autor+"%");
+	
+	 ResultSet rs = stmt.executeQuery();
+	 
+	 while (rs.next()) {
+		 Integer cod = rs.getInt("codigo_obra");
+		 String titulo = rs.getString("titulo");
+		 long isbn	= rs.getLong("isbn");
+		 Date ano_publicacao = rs.getDate("ano_publicacao");
+		 String tipo_obra = rs.getString("tipo_obra");
+		 Boolean visibilidade = rs.getBoolean("visibilidade");
+		 String nome_autor = rs.getString("nome_autor");
+		 
+		 if(visibilidade) {
+		 
+		 livro l = new livro();
+
+		 l.setCodigo(cod);
+		 l.setTitulo(titulo);
+		 l.setIsbn(isbn);
+		 l.setAno_publicacao(ano_publicacao);
+		 l.setTipo_obra(tipo_obra);
+		 l.getAutor().setNome_autor(nome_autor);
+		 lista.add(l);
+		 
+	 }}
+	
+	return lista;
+	
+}
+public List<livro> buscarTitulo(String tituloB) throws SQLException {
+	List<livro> lista = new ArrayList<livro>();
+	
+	String sql = "SELECT * FROM obra o, autor a, obra_autor oa WHERE o.codigo_obra = oa.codigo_obra AND " + 
+						                                                 "oa.codigo_autor = a.idAutor AND titulo like ?";
+	
+	
+	
+	PreparedStatement stmt = connection.prepareStatement(sql);
+	stmt.setString(1, "%"+tituloB+"%");
+	
+	 ResultSet rs = stmt.executeQuery();
+	 
+	 while (rs.next()) {
+		 Integer cod = rs.getInt("codigo_obra");
+		 String titulo = rs.getString("titulo");
+		 long isbn	= rs.getLong("isbn");
+		 Date ano_publicacao = rs.getDate("ano_publicacao");
+		 String tipo_obra = rs.getString("tipo_obra");
+		 Boolean visibilidade = rs.getBoolean("visibilidade");
+		 String nome_autor = rs.getString("nome_autor");
+		 if(visibilidade) {
+		 
+		 livro l = new livro();
+
+		 l.setCodigo(cod);
+		 l.setTitulo(titulo);
+		 l.setIsbn(isbn);
+		 l.setAno_publicacao(ano_publicacao);
+		 l.setTipo_obra(tipo_obra);
+		 l.getAutor().setNome_autor(nome_autor);
+		 lista.add(l);
+		 
+	 }}
+	
+	return lista;
+	
+}
+	
 }
