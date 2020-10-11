@@ -42,18 +42,22 @@
 			location.href= "removeObra?id="+id ;
 	}
 </script>
-<script type="text/javascript">
-	function acao(text){
-		if (text=123){ 
-			
-			//location.href= pesquisarLivros?busca
-			}
-		if else(acao = titulo){
-			location.href= "removeObra?id="+id ;
-			}
-</script>
+
 
 </head>
+
+<script type="text/javascript">
+	function verificaIsbn(isbnN){
+		/* isbnN = isbnN.replace(/\D/g, ''); */
+		console.log(isbnN);
+		if(!isNaN(isbnN) && isbnN!= 0){
+			locale.action = "pesquisarLivros?acao=1";  
+			}
+		else {
+			alert("Digite apenas nunmero na pesquisa!")
+			}
+		}		
+</script>
 
 <body
 	style="background-image: url(imgs/livro1.jpg); background-repeat: no-repeat; width: 100%; height: 100%;">
@@ -78,17 +82,18 @@
 							aria-haspopup="true" aria-expanded="false">PESQUISAR POR</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 							
-							<form action="pesquisarLivros?acao=1" method="post">
+							<form action="pesquisarLivros?acao=1" method="post"
+							onsubmit="javascript:verificaIsbn(this.busca.value); return false;">
 							<input type="text" class="form-control " name="busca" id="inputBusca"
 						aria-label="Input text com botão dropdown"
-						placeholder="busca porisbn">
+						placeholder="busca porisbn"/>
 							<button class="dropdown-item"  id="isbnBusca" type="submit">ISBN</button>
 							</form>
 							
 							<form action="pesquisarLivros?acao=2" method="post">
 							<input type="text" class="form-control " name="busca" id="inputBusca"
 						aria-label="Input text com botão dropdown"
-						placeholder="busca por autor">
+						placeholder="busca por autor"/>
 							<button class="dropdown-item"  type="submit">AUTOR</button>
 							</form>
 							
