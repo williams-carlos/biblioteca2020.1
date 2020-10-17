@@ -31,7 +31,7 @@
     <c:import url="cabecalho.jsp" />
     <div class="container">
     <div class="row">
-    <h2 style="color: white; padding-top:50px" class="offset-lg-4 col-lg-4 text-center">Livros</h2>
+    <h2 style="color: white; padding-top:50px" class="offset-lg-4 col-lg-4 text-center">Usuários</h2>
     </div>
     </div>
     
@@ -62,6 +62,7 @@
 	      <th scope="col">Código</th>
 	      <th scope="col">Nome</th>
 	      <th scope="col">Data de Nascimento</th>
+	      <th scope="col">Visualizar</th>
 	      <th scope="col">Editar</th>
 	      <th scope="col">Remover</th>
 	    
@@ -73,6 +74,7 @@
 	      <th scope="row">${usu.codigo}</th>
 	      <td>${usu.nome_usuario}</td>
 	      <td><fmt:formatDate pattern = "dd-MM-yyyy" value = "${usu.dataNascimento}" />
+	      <td><a href="visualizarUsuario?id=${usu.codigo}"><i class="fas fa-eye"></i></a></td>
 	      <td><a href="editarUsuario?id=${usu.codigo}"><i class="fas fa-edit"></i></a></td>
 	      <td><a href="removeUsuario?codigo=${usu.codigo}"><i class="fas fa-trash-alt"></i></a></td>
 	      
