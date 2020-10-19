@@ -49,6 +49,11 @@ public class pesquisarLivros extends HttpServlet {
 	
 				lista=ld.buscarTitulo(req.getParameter("busca"));		
 			}
+			else {
+				
+				lista=ld.mostrarLivros();
+				
+			}
 			
 			RequestDispatcher rd = req.getRequestDispatcher("mostrarLivros.jsp");
 			req.setAttribute("lista", lista);

@@ -50,7 +50,7 @@
 	function verificaIsbn(isbnN){
 		/* isbnN = isbnN.replace(/\D/g, ''); */
 		console.log(isbnN);
-		if(!isNaN(isbnN) && isbnN!= 0){
+		if(!isNaN(isbnN) && isbnN!=0){
 			locale.action = "pesquisarLivros?acao=1";  
 			}
 		else {
@@ -83,10 +83,10 @@
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 							
 							<form action="pesquisarLivros?acao=1" method="post"
-							onsubmit="javascript:verificaIsbn(this.busca.value); return false;">
-							<input type="text" class="form-control " name="busca" id="inputBusca"
+							onsubmit="javascript:verificaIsbn(this.isbn.value); return false;">
+							<input type="text" class="form-control " name="isbn" id="inputBusca"
 						aria-label="Input text com botão dropdown"
-						placeholder="busca porisbn"/>
+						placeholder="busca por isbn"/>
 							<button class="dropdown-item"  id="isbnBusca" type="submit">ISBN</button>
 							</form>
 							
@@ -119,7 +119,7 @@
 						<th scope="col">Autor</th>
 						<th scope="col">Data</th>
 						<th scope="col">Remover</th>
-
+						<th scope="col">Editar</th>
 
 					</tr>
 				</thead>
@@ -133,7 +133,7 @@
 							<td>${livro.autor.nome_autor}</td>
 							<td><fmt:formatDate pattern="dd-MM-yyyy" value="${livro.ano_publicacao}" /></td>
 							<td><a href= javascript:confirma(${livro.codigo})><i	class="fas fa-trash-alt"></i></a></td>
-							
+							<td><a href= adicionarLivro?edit=${livro.codigo}><i	class="fas fa-edit"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

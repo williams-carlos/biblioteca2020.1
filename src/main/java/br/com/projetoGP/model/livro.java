@@ -13,9 +13,13 @@ public class livro {
 	private long isbn;
 	private boolean visibilidade;
 	private autor autor;
+	private assunto assunto;
+	private editora editora;
 	
 	public livro() {
 		autor = new autor();
+		assunto = new assunto();
+		editora = new editora();
 	}
 	
 	public boolean isVisibilidade() {
@@ -67,6 +71,22 @@ public class livro {
 
 	public void setAutor(autor autor) {
 		this.autor = autor;
+	}
+
+	public assunto getAssunto() {
+		return assunto;
+	}
+
+	public void setAssunto(assunto assunto) {
+		this.assunto = assunto;
+	}
+
+	public editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(editora editora) {
+		this.editora = editora;
 	}
 	
 	

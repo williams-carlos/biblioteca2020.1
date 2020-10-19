@@ -19,30 +19,47 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
 	 <link rel="stylesheet" href="css/estilo.css">
 	</head>
+	
+	
+<script type="text/javascript">
+	function verificaIsbn(isbnN){
+		/* isbnN = isbnN.replace(/\D/g, ''); */
+		console.log(isbnN);
+		if(!isNaN(isbnN) && isbnN!=0){
+			locale.action = "pesquisarLivros?acao=1";  
+			}
+		else {
+			alert("Digite apenas número no campo ISBN!")
+			}
+		}		
+</script>
+
+
 <body style="background-image: url(imgs/livro1.jpg);
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;">
 
 <c:import url="cabecalho.jsp" />
+		
 <div class="container">
 <div class="form-group" >
-<form action = adicionarLivro method="post">
+<form action = adicionarLivro method="post" onsubmit="javascript:verificaIsbn(this.isbn.value); return false;">
   <div class="row ">
   <div class= "col-4 espaco">
 	
-		
-		
-			 <input placeholder="Título" class="form-control" type="text" name="titulo"></input>
+			 <input type="hidden" name="id" value="${listaLiv.codigo}" >
+			<label>Título Livro:</label>
+			 <input placeholder="Título" class="form-control" type="text" name="titulo" value="${listaLiv.titulo}"></input>
 			  <br>
 			  <br>
-		  
-			   <input placeholder="Data" class="form-control" type="date" name="date"></input>
+		  		<label>Ano Publicação:</label>
+			   <input placeholder="Data" class="form-control" type="date" name="date" value="${listaLiv.ano_publicacao}"></input>
 			   <br>
 			   <br>
 			   
 			 <select class="custom-select form-control" id="inputGroupSelect01" name=tipo>
-				    <option selected>Escolher...</option>
+				    <option selected>Classificação...</option>
 				    <option value="Auto-ajuda">Auto-ajuda</option>
 				    <option value="Aventura">Aventura</option>
 				    <option value="Científico">Científico</option>
@@ -67,15 +84,16 @@
  		
  		<div class="col-4 espaco">
  	
- 	
- 		 <input placeholder="Nome do Autor" class="form-control" type="text" name="nomeAutor"></input>
+ 		<label>Nome do Autor:</label>
+ 		 <input placeholder="Nome do Autor" class="form-control" type="text" name="nomeAutor" value="${listaLiv.autor.nome_autor}"></input>
  		 <br>
  		 <br>
- 		 
- 		 <input placeholder="ISBN" class="form-control" type="number" name="isbn"></input>
+ 		 <label>ISBN:</label>
+ 		 <input placeholder="ISBN" class="form-control" type="text" name="isbn" value="${listaLiv.isbn}"></input>
  		 <br>
  		 <br>
- 		 <textarea id="form10" placeholder="Assunto" name="assunto" class="md-textarea form-control" rows="3"></textarea>
+ 		 <label>Assunto:</label>
+ 		 <textarea id="form10" placeholder="Assunto" name="assunto" class="md-textarea form-control" rows="3">${listaLiv.assunto.descricaoAssunto}</textarea>
  		 
  		  <br>
 			<br>
@@ -90,20 +108,30 @@
   
   <div class="col-4 espaco">
  	
- 	
- 		 <input placeholder="Nome da Editora" class="form-control" type="text" name="nomeEditora"></input>
+ 		<label>Nome Editora:</label>
+ 		 <input placeholder="Nome da Editora" class="form-control" type="text" name="nomeEditora" value="${listaLiv.editora.nome_editora}"></input>
  		 <br>
  		 <br>
- 		 <input placeholder="Cidade da Editora" class="form-control" type="text" name="cidadeEditora"></input>
+ 		 <label>Cidade Editora:</label>
+ 		 <input placeholder="Cidade da Editora" class="form-control" type="text" name="cidadeEditora" value="${listaLiv.editora.cidade}"></input>
  		 
  		 
  		  <br>
 			<br>
-			 <br>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+						
+							<input type="checkbox" name="visibilidade" value="true">
+						</div>
+					</div>
+						<label  class="form-control"	aria-label="Input text com checkbox">visivel</label>
+				</div>
 			<br>
-			 <br>
 			<br>
- 		  <button  type="submit" class="btn btn-default"> Cadastrar </button>
+			<br>
+			<br>
+ 		  <button  type="submit" class="btn btn-default"> Salvar </button>
 
 				  </div>
 				  
