@@ -37,17 +37,17 @@ public class pesquisarLivros extends HttpServlet {
 			
 			else if(Integer.parseInt(acao) == 1){
 				
-				lista=ld.buscarIsbn(Long.parseLong(req.getParameter("busca")));		
+				lista=ld.buscarIsbn(Long.parseLong(req.getParameter("isbn")));		
 			}
 			
 			else if (Integer.parseInt(acao) == 2){
 				
-				lista=ld.buscarAutor(req.getParameter("busca"));		
+				lista=ld.buscarAutor(req.getParameter("autor"));		
 			}
 			
 			else if (Integer.parseInt(acao) == 3){
 	
-				lista=ld.buscarTitulo(req.getParameter("busca"));		
+				lista=ld.buscarTitulo(req.getParameter("titulo"));		
 			}
 			else {
 				

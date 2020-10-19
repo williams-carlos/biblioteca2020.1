@@ -49,11 +49,11 @@
   <div class= "col-4 espaco">
 	
 			 <input type="hidden" name="id" value="${listaLiv.codigo}" >
-			<label>Título Livro:</label>
+			<label style="color: white">Título Livro:</label>
 			 <input placeholder="Título" class="form-control" type="text" name="titulo" value="${listaLiv.titulo}"></input>
 			  <br>
 			  <br>
-		  		<label>Ano Publicação:</label>
+		  		<label style="color: white">Ano Publicação:</label>
 			   <input placeholder="Data" class="form-control" type="date" name="date" value="${listaLiv.ano_publicacao}"></input>
 			   <br>
 			   <br>
@@ -84,15 +84,15 @@
  		
  		<div class="col-4 espaco">
  	
- 		<label>Nome do Autor:</label>
+ 		<label style="color: white">Nome do Autor:</label>
  		 <input placeholder="Nome do Autor" class="form-control" type="text" name="nomeAutor" value="${listaLiv.autor.nome_autor}"></input>
  		 <br>
  		 <br>
- 		 <label>ISBN:</label>
+ 		 <label style="color: white">ISBN:</label>
  		 <input placeholder="ISBN" class="form-control" type="text" name="isbn" value="${listaLiv.isbn}"></input>
  		 <br>
  		 <br>
- 		 <label>Assunto:</label>
+ 		 <label style="color: white">Assunto:</label>
  		 <textarea id="form10" placeholder="Assunto" name="assunto" class="md-textarea form-control" rows="3">${listaLiv.assunto.descricaoAssunto}</textarea>
  		 
  		  <br>
@@ -108,12 +108,12 @@
   
   <div class="col-4 espaco">
  	
- 		<label>Nome Editora:</label>
+ 		<label style="color: white">Nome Editora:</label>
  		 <input placeholder="Nome da Editora" class="form-control" type="text" name="nomeEditora" value="${listaLiv.editora.nome_editora}"></input>
  		 <br>
  		 <br>
- 		 <label>Cidade Editora:</label>
- 		 <input placeholder="Cidade da Editora" class="form-control" type="text" name="cidadeEditora" value="${listaLiv.editora.cidade}"></input>
+ 		 <label style="color: white">Cidade Editora:</label>
+ 		 <input placeholder="Cidade da Editora" class="form-control" type="text"  name="cidadeEditora" value="${listaLiv.editora.cidade}"></input>
  		 
  		 
  		  <br>

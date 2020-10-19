@@ -54,7 +54,7 @@
 			locale.action = "pesquisarLivros?acao=1";  
 			}
 		else {
-			alert("Digite apenas nunmero na pesquisa!")
+			alert("Digite apenas nunmero na pesquisa ISBN!")
 			}
 		}		
 </script>
@@ -71,13 +71,10 @@
 	</div>
 
 	<div class="container espaco">
-		<div class="col-lg-8 offset-lg-2 table-wrapper-scroll-y my-custom-scrollbar ">
-		
-			 
-				<div class="input-group">
+	<div class="input-group">
 					
 					<div class="input-group-append">
-						<button class="p-2 mb-2 btn btn-outline-secondary dropdown-toggle"
+						<button class="p-2 mb-2 btn dropdown-toggle"
 							id="dropdownMenu2" type="button" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">PESQUISAR POR</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -91,14 +88,14 @@
 							</form>
 							
 							<form action="pesquisarLivros?acao=2" method="post">
-							<input type="text" class="form-control " name="busca" id="inputBusca"
+							<input type="text" class="form-control " name="autor" id="inputBusca"
 						aria-label="Input text com botão dropdown"
 						placeholder="busca por autor"/>
 							<button class="dropdown-item"  type="submit">AUTOR</button>
 							</form>
 							
 							<form action="pesquisarLivros?acao=3" method="post">
-							<input type="text" class="form-control " name="busca" id="inputBusca"
+							<input type="text" class="form-control " name="titulo" id="inputBusca"
 						aria-label="Input text com botão dropdown"
 						placeholder="busca por titulo">
 							<button class="dropdown-item"  type="submit">TÍTULO</button>
@@ -108,6 +105,10 @@
 						
 					</div>
 				</div>
+		<div class="col-lg-8 offset-lg-2 table-wrapper-scroll-y my-custom-scrollbar ">
+		
+			 
+				
 			
 		 
 			<table class="table table-striped table-bordered table-dark ">
