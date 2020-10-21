@@ -95,7 +95,7 @@
 		 
  	</div>
  		 
- 		  	<button class="btn btn-default"> Sair </button>
+ 		  	<button class="btn btn-default" id="sair"> Sair </button>
 		</div>
 				  
 	</form>

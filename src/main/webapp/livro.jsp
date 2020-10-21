@@ -31,12 +31,12 @@
   <div class="row espaco">
  
  <form action="adicionarObra" method="post">
-    <button class="btn btn-default"> Cadastrar Livro  </button>
+    <button class="btn btn-default" id="cadastrarLivro"> Cadastrar Livro  </button>
    </form>
   </div>
   <div class="row espaco">
   <form action="pesquisarLivros" method="post">
-    <button  class="btn btn-default"> Pesquisar Livros </button>
+    <button  class="btn btn-default" id="pesquisarLivro"> Pesquisar Livros </button>
     </form>
   </div>
 </div>

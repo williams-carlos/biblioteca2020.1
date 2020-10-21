@@ -42,17 +42,17 @@
 					    <div class="input-group-prepend">
 					      <span class="input-group-text"><i class="fas fa-user"></i></span>
 					    </div>
-					    <input type="text" name="login" class="form-control" placeholder="Login">
+					    <input type="text" name="login" class="form-control" id="login" placeholder="Login">
 					  </div>
 					
 					  <div class="input-group mb-3">
 					    <div class="input-group-prepend">
 					      <span class="input-group-text"><i class="fas fa-lock"></i></span>
 					    </div>
-					    <input type="password" name="senha" class="form-control" placeholder="Password">
+					    <input type="password" name="senha" id="senha" class="form-control" placeholder="Password">
 					  </div>
 					  <br>
-					  <input type="submit" class="btn btn-default" value="Entrar">
+					  <input type="submit" class="btn btn-default" id="entrar" value="Entrar">
 					  <br>
 					  <br>
 					</div>

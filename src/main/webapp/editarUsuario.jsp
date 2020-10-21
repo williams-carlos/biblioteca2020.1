@@ -106,7 +106,7 @@
 		 
  	</div>
  		 
- 		  	<button  type="submit" class="btn btn-default"> Editar </button>
+ 		  	<button  type="submit" class="btn btn-default" id="editar"> Editar </button>
 		</div>
 				  
 	</form>
