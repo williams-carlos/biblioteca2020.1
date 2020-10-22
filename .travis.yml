@@ -6,7 +6,12 @@ jdk:
 branches: 
   - master
   - developer1 
-  -feature/buscarLivro
+
+  - feature/buscarLivro
+  - feature/deletarUsuario
+  - feature/editarDetalhesLivro
+  - feature/editarUsuario
+
   
 
 # see https://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
