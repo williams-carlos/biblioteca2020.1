@@ -65,40 +65,42 @@
 	<c:import url="cabecalho.jsp" />
 	<div class="container">
 		<div class="row">
+		
 			<h2 style="color: white; padding-top: 50px"
 				class="offset-lg-4 col-lg-4 text-center">Livros</h2>
 		</div>
 	</div>
 
 	<div class="container espaco">
+	<div class="row"> 
 	<div class="input-group">
 					
 					<div class="input-group-append">
 						<button class="p-2 mb-2 btn dropdown-toggle"
-							id="dropdownMenu2" type="button" data-toggle="dropdown"
+							id="pesquisarPor" type="button" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false">PESQUISAR POR</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
 							
 							<form action="pesquisarLivros?acao=1" method="post"
 							onsubmit="javascript:verificaIsbn(this.isbn.value); return false;">
-							<input type="text" class="form-control " name="isbn" id="inputBusca"
+							<input type="text" class="form-control " name="isbn" id="inputIsbn"
 						aria-label="Input text com botão dropdown"
 						placeholder="busca por isbn"/>
 							<button class="dropdown-item"  id="isbnBusca" type="submit">ISBN</button>
 							</form>
 							
 							<form action="pesquisarLivros?acao=2" method="post">
-							<input type="text" class="form-control " name="autor" id="inputBusca"
+							<input type="text" class="form-control " name="autor" id="inputAutor"
 						aria-label="Input text com botão dropdown"
 						placeholder="busca por autor"/>
-							<button class="dropdown-item"  type="submit">AUTOR</button>
+							<button class="dropdown-item" id="autorBusca" type="submit">AUTOR</button>
 							</form>
 							
 							<form action="pesquisarLivros?acao=3" method="post">
-							<input type="text" class="form-control " name="titulo" id="inputBusca"
+							<input type="text" class="form-control " name="titulo" id="inputTitulo"
 						aria-label="Input text com botão dropdown"
 						placeholder="busca por titulo">
-							<button class="dropdown-item"  type="submit">TÍTULO</button>
+							<button class="dropdown-item" id="tituloBusca" type="submit">TÍTULO</button>
    							</form>
 							
 					   </div> 
@@ -133,15 +135,15 @@
 							<td>${livro.isbn}</td>
 							<td>${livro.autor.nome_autor}</td>
 							<td><fmt:formatDate pattern="dd-MM-yyyy" value="${livro.ano_publicacao}" /></td>
-							<td><a href= javascript:confirma(${livro.codigo})><i	class="fas fa-trash-alt"></i></a></td>
-							<td><a href= adicionarLivro?edit=${livro.codigo}><i	class="fas fa-edit"></i></a></td>
+							<td><a href= javascript:confirma(${livro.codigo}) id="removerLivro"><i	class="fas fa-trash-alt"></i></a></td>
+							<td><a href= adicionarLivro?edit=${livro.codigo} id="editarLivro"><i	class="fas fa-edit"></i></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 	</div>
-
+</div>
 
 </body>
 </html>

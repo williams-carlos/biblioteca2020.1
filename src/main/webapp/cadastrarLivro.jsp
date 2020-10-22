@@ -50,34 +50,34 @@
 	
 			 <input type="hidden" name="id" value="${listaLiv.codigo}" >
 			<label style="color: white">Título Livro:</label>
-			 <input placeholder="Título" class="form-control" type="text" name="titulo" value="${listaLiv.titulo}"></input>
+			 <input placeholder="Título" class="form-control" type="text" id="tituloLivro" name="titulo" value="${listaLiv.titulo}"></input>
 			  <br>
 			  <br>
 		  		<label style="color: white">Ano Publicação:</label>
-			   <input placeholder="Data" class="form-control" type="date" name="date" value="${listaLiv.ano_publicacao}"></input>
+			   <input placeholder="Data" class="form-control" type="date" id="anoPublicacaoLivro" name="date" value="${listaLiv.ano_publicacao}"></input>
 			   <br>
 			   <br>
 			   
-			 <select class="custom-select form-control" id="inputGroupSelect01" name=tipo>
-				    <option selected>Classificação...</option>
-				    <option value="Auto-ajuda">Auto-ajuda</option>
-				    <option value="Aventura">Aventura</option>
-				    <option value="Científico">Científico</option>
-				    <option value="Conto">Conto</option>
-				    <option value="Crônica">Crônica</option>
-				    <option value="Didático">Didático</option>
-				    <option value="Épico">Épico</option>
-				    <option value="Fantasia">Fantasia</option>
-				    <option value="Ficção-científica">Ficção-científica</option>
-				    <option value="Ficção-histórica">Ficção-histórica</option>
-				    <option value="Horror">Horror</option>
-				    <option value="Ação">Ação</option>
-				    <option value="Drama">Drama</option>
-				    <option value="Infantil">Infantil</option>
-				    <option value="Jogos">Jogos</option>
-				    <option value="Manual">Manual</option>
-				    <option value="Poesia">Poesia</option>
-				    <option value="Guia de Viagem">Guia de Viagem</option>
+			 <select class="custom-select form-control" id="classificacaoLivro" name=tipo >
+				    <option selected value="${listaLiv.tipo_obra }" >Classificação...</option>
+				    <option id="autoAjuda" value="Auto-ajuda">Auto-ajuda</option>
+				    <option id="aventura" value="Aventura">Aventura</option>
+				    <option id="cientifico" value="Científico">Científico</option>
+				    <option id="conto" value="Conto">Conto</option>
+				    <option id="cronica" value="Crônica">Crônica</option>
+				    <option id="didatico" value="Didático">Didático</option>
+				    <option id="epico" value="Épico">Épico</option>
+				    <option id="fantasia" value="Fantasia">Fantasia</option>
+				    <option id="ficcaoCientifica" value="Ficção-científica">Ficção-científica</option>
+				    <option id="ficcaoHistorica" value="Ficção-histórica">Ficção-histórica</option>
+				    <option id="horror" value="Horror">Horror</option>
+				    <option id="acao" value="Ação">Ação</option>
+				    <option id="drama" value="Drama">Drama</option>
+				    <option id="infantil" value="Infantil">Infantil</option>
+				    <option id="jogos" value="Jogos">Jogos</option>
+				    <option id="manual" value="Manual">Manual</option>
+				    <option id="poesia" value="Poesia">Poesia</option>
+				    <option id="guiaViagem" value="Guia de Viagem">Guia de Viagem</option>
 				  </select>
 		</div>
  		
@@ -85,15 +85,15 @@
  		<div class="col-4 espaco">
  	
  		<label style="color: white">Nome do Autor:</label>
- 		 <input placeholder="Nome do Autor" class="form-control" type="text" name="nomeAutor" value="${listaLiv.autor.nome_autor}"></input>
+ 		 <input placeholder="Nome do Autor" class="form-control" type="text" id="nomeAutorLivro" name="nomeAutor" value="${listaLiv.autor.nome_autor}"></input>
  		 <br>
  		 <br>
  		 <label style="color: white">ISBN:</label>
- 		 <input placeholder="ISBN" class="form-control" type="text" name="isbn" value="${listaLiv.isbn}"></input>
+ 		 <input placeholder="ISBN" class="form-control" type="text" id="isbnLivro" name="isbn" value="${listaLiv.isbn}"></input>
  		 <br>
  		 <br>
  		 <label style="color: white">Assunto:</label>
- 		 <textarea id="form10" placeholder="Assunto" name="assunto" class="md-textarea form-control" rows="3">${listaLiv.assunto.descricaoAssunto}</textarea>
+ 		 <textarea id="form10" placeholder="Assunto" name="assunto" id="assuntoLivro" class="md-textarea form-control" rows="3">${listaLiv.assunto.descricaoAssunto}</textarea>
  		 
  		  <br>
 			<br>
@@ -109,11 +109,11 @@
   <div class="col-4 espaco">
  	
  		<label style="color: white">Nome Editora:</label>
- 		 <input placeholder="Nome da Editora" class="form-control" type="text" name="nomeEditora" value="${listaLiv.editora.nome_editora}"></input>
+ 		 <input placeholder="Nome da Editora" class="form-control" type="text" id="nomeEditoraLivro" name="nomeEditora" value="${listaLiv.editora.nome_editora}"></input>
  		 <br>
  		 <br>
  		 <label style="color: white">Cidade Editora:</label>
- 		 <input placeholder="Cidade da Editora" class="form-control" type="text"  name="cidadeEditora" value="${listaLiv.editora.cidade}"></input>
+ 		 <input placeholder="Cidade da Editora" class="form-control" type="text" id="cidadeEditoraLivro" name="cidadeEditora" value="${listaLiv.editora.cidade}"></input>
  		 
  		 
  		  <br>
@@ -122,7 +122,7 @@
 					<div class="input-group-prepend">
 						<div class="input-group-text">
 						
-							<input type="checkbox" name="visibilidade" value="true">
+							<input type="checkbox" id="visivel" name="visibilidade" value="true">
 						</div>
 					</div>
 						<label  class="form-control"	aria-label="Input text com checkbox">visivel</label>
@@ -131,7 +131,7 @@
 			<br>
 			<br>
 			<br>
- 		  <button  type="submit" class="btn btn-default"> Salvar </button>
+ 		  <button  type="submit" class="btn btn-default" id="salvarLivro"> Salvar </button>
 
 				  </div>
 				  

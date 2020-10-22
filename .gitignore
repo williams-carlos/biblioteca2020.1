@@ -1,6 +1,7 @@
-/target/
+/.target/
 /.travis.yml
 /README.md
 /.settings/
 /.project
 /.classpath
+/target/
