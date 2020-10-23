@@ -293,4 +293,14 @@
     <filter-name>FilterAutenticacao</filter-name>
     <servlet-name>usuarios</servlet-name>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>visualizarUsuario</display-name>
+    <servlet-name>visualizarUsuario</servlet-name>
+    <servlet-class>br.com.projetoGP.servlets.visualizarUsuario</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>visualizarUsuario</servlet-name>
+    <url-pattern>/visualizarUsuario</url-pattern>
+  </servlet-mapping>
 </web-app>

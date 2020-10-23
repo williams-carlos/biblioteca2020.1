@@ -101,7 +101,7 @@
 		 
  	</div>
  		 
- 		  	<button  type="submit" class="btn btn-default"> Cadastrar </button>
+ 		  	<button  type="submit" class="btn btn-default" id="cadastrar"> Cadastrar </button>
 		</div>
 				  
 	</form>

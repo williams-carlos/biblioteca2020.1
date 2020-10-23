@@ -32,20 +32,20 @@
 
   <div class="col-4">
 	
-			<input readonly="true" name="codigo" value="${usuario.codigo}"></input>
+			<input readonly="true" name="codigo" id="codigo" value="${usuario.codigo}"></input>
 			<br>
 			<br>
 			<label style="color:white">Nome</label>
-			<input placeholder="Nome" class="form-control" type="text" name="nome_usuario" value="${usuario.nome_usuario} "></input>
+			<input placeholder="Nome" class="form-control" type="text" name="nome_usuario" id="nome" value="${usuario.nome_usuario} "></input>
 			 <br>
 			 <label style="color:white">CPF</label>
- 		 	<input placeholder="CPF" class="form-control" type="text" name="cpf" value="${usuario.cpf}"></input>
+ 		 	<input placeholder="CPF" class="form-control" type="text" name="cpf" id="cpf" value="${usuario.cpf}"></input>
  		 	<br>
  			<label style="color:white">Login</label>
- 			<input placeholder="Login" class="form-control" type="text" name="login" value="${usuario.login}"></input>
+ 			<input placeholder="Login" class="form-control" type="text" name="login" id="login" value="${usuario.login}"></input>
  		 	<br>
  		 	<label style="color:white">Senha</label>
- 		 	<input placeholder="Senha" class="form-control" type="password" name="senha" value="${usuario.senha}" ></input>
+ 		 	<input placeholder="Senha" class="form-control" type="password" name="senha" id="senha" value="${usuario.senha}" ></input>
  		 	<br>
  		 	<br>
  		 	
@@ -56,19 +56,19 @@
  	<div class="col-4">
  	
  			<label style="color:white">Data</label>
- 			<input placeholder="Data" class="form-control" type="date" name="dataNascimento" value="${usuario.dataNascimento}"></input>
+ 			<input placeholder="Data" class="form-control" type="date" name="dataNascimento" id="dataNascimento" value="${usuario.dataNascimento}"></input>
 			<br>
 			<label style="color:white">Telefone</label>
- 			<input placeholder="Telefone" class="form-control" type="tel" name="telefone" value="${usuario.telefone}"></input>
+ 			<input placeholder="Telefone" class="form-control" type="tel" name="telefone" id="telefone" value="${usuario.telefone}"></input>
 			 <br>
 			 <label style="color:white">Logradouro</label>
-			<input placeholder="Logradouro" class="form-control" type="text" name="endereco_logradouro" value="${usuario.endereco_logradouro}"></input>
+			<input placeholder="Logradouro" class="form-control" type="text" name="endereco_logradouro" id="logradouro" value="${usuario.endereco_logradouro}"></input>
 			 <br>
 			 <label style="color:white">Número</label>
-			 <input placeholder="Número" class="form-control" type="number" name="endereco_numero" value="${usuario.endereco_numero}"></input>
+			 <input placeholder="Número" class="form-control" type="number" name="endereco_numero" id="numero" value="${usuario.endereco_numero}"></input>
 			 <br>
 			 <label style="color:white">Complemento</label>
- 		 	<input placeholder="Complemento" class="form-control" type="text" name="endereco_complemento" value="${usuario.endereco_complemento}"></input>
+ 		 	<input placeholder="Complemento" class="form-control" type="text" name="endereco_complemento" id="complemento" value="${usuario.endereco_complemento}"></input>
  		 	<br>
  			<br>
  		 
@@ -79,16 +79,16 @@
  	
  	<div class="col-4">
  	<label style="color:white">Bairro</label>
- 	<input placeholder="Bairro" class="form-control" type="text" name="endereco_bairro" value="${usuario.endereco_bairro}"></input>
+ 	<input placeholder="Bairro" class="form-control" type="text" name="endereco_bairro" id="bairro" value="${usuario.endereco_bairro}"></input>
  		 	<br>
  		 	<label style="color:white">Cidade</label>
- 	<input placeholder="Cidade" class="form-control" type="text" name="endereco_cidade" value="${usuario.endereco_cidade}"></input>
+ 	<input placeholder="Cidade" class="form-control" type="text" name="endereco_cidade" id="cidade" value="${usuario.endereco_cidade}"></input>
 			 <br>
 			 <label style="color:white">UF</label>
-			 <input placeholder="UF" class="form-control" type="text" name="endereco_UF" value="${usuario.endereco_UF}"></input>
+			 <input placeholder="UF" class="form-control" type="text" name="endereco_UF" id="uf" value="${usuario.endereco_UF}"></input>
 			 <br>
 			 <label style="color:white">CEP</label>
-			 <input placeholder="CEP" class="form-control" type="number" name="endereco_CEP" value="${usuario.endereco_CEP}"></input>
+			 <input placeholder="CEP" class="form-control" type="number" name="endereco_CEP" id="cep" value="${usuario.endereco_CEP}"></input>
 			 <br>
 			 <br>
 		<label style="color:white">Tipo</label>
@@ -106,7 +106,7 @@
 		 
  	</div>
  		 
- 		  	<button  type="submit" class="btn btn-default"> Editar </button>
+ 		  	<button  type="submit" class="btn btn-default" id="editar"> Editar </button>
 		</div>
 				  
 	</form>
