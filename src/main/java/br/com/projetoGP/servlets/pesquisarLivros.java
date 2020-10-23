@@ -2,6 +2,7 @@ package br.com.projetoGP.servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -20,16 +21,68 @@ public class pesquisarLivros extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		livroDAO ld;
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    	String acao = req.getParameter("acao");
+    	livroDAO ld;
+    	
+    	List<livro> lista = new ArrayList<livro>();
 		try {
 			ld = new livroDAO();
 
-			List<livro> lista = ld.mostrarLivros();
-			req.setAttribute("lista", lista);
 
+			//if ((acao.length()>0)? lista=ld.buscarIsbn(isbn): lista=ld.mostrarLivros());
+			if(  req.getParameter("busca")=="" || acao == null  ) {
+				lista=ld.mostrarLivros();
+			}
+			
+			else if(Integer.parseInt(acao) == 1){
+				
+				lista=ld.buscarIsbn(Long.parseLong(req.getParameter("isbn")));		
+			}
+			
+			else if (Integer.parseInt(acao) == 2){
+				
+				lista=ld.buscarAutor(req.getParameter("autor"));		
+			}
+			
+			else if (Integer.parseInt(acao) == 3){
+	
+				lista=ld.buscarTitulo(req.getParameter("titulo"));		
+			}
+			else {
+				
+				lista=ld.mostrarLivros();
+				
+			}
+			
+			//if ((acao.length()>0)? lista=ld.buscarIsbn(isbn): lista=ld.mostrarLivros());
+			if(  req.getParameter("busca")=="" || acao == null  ) {
+				lista=ld.mostrarLivros();
+			}
+			
+			else if(Integer.parseInt(acao) == 1){
+				
+				lista=ld.buscarIsbn(Long.parseLong(req.getParameter("isbn")));		
+			}
+			
+			else if (Integer.parseInt(acao) == 2){
+				
+				lista=ld.buscarAutor(req.getParameter("autor"));		
+			}
+			
+			else if (Integer.parseInt(acao) == 3){
+	
+				lista=ld.buscarTitulo(req.getParameter("titulo"));		
+			}
+			else {
+				
+				lista=ld.mostrarLivros();
+				
+			}
+			
 			RequestDispatcher rd = req.getRequestDispatcher("mostrarLivros.jsp");
+			req.setAttribute("lista", lista);
+			req.setAttribute("lista", lista);
 			rd.forward(req, resp);
 
 		} catch (ClassNotFoundException e) {
@@ -41,4 +94,6 @@ public class pesquisarLivros extends HttpServlet {
 		}
 
 	}
+    
+    
 }

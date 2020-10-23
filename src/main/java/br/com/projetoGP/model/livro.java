@@ -12,8 +12,15 @@ public class livro {
 	private int codigo_editora;
 	private long isbn;
 	private boolean visibilidade;
+	private autor autor;
+	private assunto assunto;
+	private editora editora;
 	
-	
+	public livro() {
+		autor = new autor();
+		assunto = new assunto();
+		editora = new editora();
+	}
 	
 	public boolean isVisibilidade() {
 		return visibilidade;
@@ -56,6 +63,30 @@ public class livro {
 	}
 	public void setTipo_obra(String tipo_obra) {
 		this.tipo_obra = tipo_obra;
+	}
+
+	public autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(autor autor) {
+		this.autor = autor;
+	}
+
+	public assunto getAssunto() {
+		return assunto;
+	}
+
+	public void setAssunto(assunto assunto) {
+		this.assunto = assunto;
+	}
+
+	public editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(editora editora) {
+		this.editora = editora;
 	}
 	
 	

@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.projetoGP.DAO.funcionarioDAO;
 import br.com.projetoGP.DAO.usuarioDAO;
-import br.com.projetoGP.model.funcionario;
 import br.com.projetoGP.model.usuario;
 
 /**
