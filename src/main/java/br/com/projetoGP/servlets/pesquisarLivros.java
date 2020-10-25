@@ -55,31 +55,6 @@ public class pesquisarLivros extends HttpServlet {
 				
 			}
 			
-			//if ((acao.length()>0)? lista=ld.buscarIsbn(isbn): lista=ld.mostrarLivros());
-			if(  req.getParameter("busca")=="" || acao == null  ) {
-				lista=ld.mostrarLivros();
-			}
-			
-			else if(Integer.parseInt(acao) == 1){
-				
-				lista=ld.buscarIsbn(Long.parseLong(req.getParameter("isbn")));		
-			}
-			
-			else if (Integer.parseInt(acao) == 2){
-				
-				lista=ld.buscarAutor(req.getParameter("autor"));		
-			}
-			
-			else if (Integer.parseInt(acao) == 3){
-	
-				lista=ld.buscarTitulo(req.getParameter("titulo"));		
-			}
-			else {
-				
-				lista=ld.mostrarLivros();
-				
-			}
-			
 			RequestDispatcher rd = req.getRequestDispatcher("mostrarLivros.jsp");
 			req.setAttribute("lista", lista);
 			req.setAttribute("lista", lista);

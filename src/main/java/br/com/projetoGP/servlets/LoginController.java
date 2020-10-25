@@ -25,8 +25,8 @@ public class LoginController extends HttpServlet {
     public LoginController() {
         super();
         // TODO Auto-generated constructor stub
+    
     }
-
     
     public String efetuaLogin(String login, String senha, HttpSession sessao) throws ClassNotFoundException, SQLException  {
     	
@@ -63,14 +63,6 @@ public class LoginController extends HttpServlet {
 		}
     	
     }
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

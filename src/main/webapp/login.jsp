@@ -50,7 +50,6 @@
 			<div class="offset-lg-4 col-lg-4 bg-primary">
 				<form action="LoginController" method="post">
 					<div class="input-group mb-3 espaco">
-
 					    <div class="input-group-prepend">
 					      <span class="input-group-text"><i class="fas fa-user"></i></span>
 					    </div>
@@ -66,15 +65,12 @@
 					  <br>
 					  <input type="submit" class="btn btn-default" id="entrar" value="Entrar">
 					  <br>
-					  <br>
-
-					</div>
-
-										
-				</form>
+					  <br>					
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
+	
 
 
 </body>

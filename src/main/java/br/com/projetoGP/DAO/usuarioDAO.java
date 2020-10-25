@@ -19,7 +19,8 @@ public class usuarioDAO {
 	private Connection connection;
 	
 	public usuarioDAO() throws ClassNotFoundException {
-		connection = new ConnectionFactory().getConnection();
+		 new ConnectionFactory();
+		 this.connection = ConnectionFactory.getConnection();
 	}
 	
 public int cadastrarUsuario(usuario usuario) throws SQLException {

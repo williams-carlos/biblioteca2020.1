@@ -148,38 +148,3 @@
 </body>
 </html>
 
-<!--  <a class="dropdown-item" href=javascript:acao(123) id="isbnBusc">ISBN</a>
-   							 <a class="dropdown-item" href="#" id="autorBusca">Autor</a>
-   							 <a class="dropdown-item" href=javascript:acao(titulo) id="tituloBusca">Titulo</a> -->
-
-<!-- <input type="submit" class="btn btn-secondary" value="ISBN" id="buscaIsbn">
-							<input type="submit" class="btn btn-secondary" value="AUTOR" id="buscaAutor">
-							<input type="submit" class="btn btn-secondary" value="TÍTULO" id="buscaTitulo">
-<div class="dropdown">
-		<button class="btn btn-secondary dropdown-toggle" type="button"
-			id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-			aria-expanded="false">Dropdown</button>
-		<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-			<button class="dropdown-item" type="button">ISBN</button>
-			<button class="dropdown-item" type="button">AUTOR</button>
-			<button class="dropdown-item" type="button">TÍTULO</button>
-		</div>
-	</div>
- -->
-
-<!-- <div class="container">
-		<form action="pesquisarLivros" method="post">
-			<div class="form-row">
-				<div>
-
-					<input type="text" name="isbn" id="isbn" placeholder="digite o ISBN aqui..."> 
-					<input type="submit" class="btn btn-secondary" value="ISBN">
-
-				</div>
-			</div>
-		</form>
-	</div>
- -->
- <!-- <button class="dropdown-item" type="button" value="isbn" id="isbn">ISBN</button>
-							<button class="dropdown-item" type="button" value="autor">AUTOR</button>
-							<button class="dropdown-item" type="button" value="titulo" id="btnTitulo">TÍTULO</button> -->

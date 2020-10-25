@@ -6,6 +6,7 @@ connection/
 /.project
 /.classpath
 /target/
+.settings/
 ### Java-Web ###
 ## ignoring target file
 target/
